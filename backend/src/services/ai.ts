@@ -118,7 +118,6 @@ export async function summarizeEmail(
 			? getBulletsPrompt(clamped)
 			: getDetailedPrompt(clamped);
 
-	const fetch = await import("node-fetch").then((m) => m.default);
 	const response = await fetch(API_URL, {
 		method: "POST",
 		headers: {
