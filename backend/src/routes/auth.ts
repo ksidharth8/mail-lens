@@ -1,13 +1,13 @@
 import express from "express";
 import jwt from "jsonwebtoken";
-import fetch from "node-fetch";
+import { Request, Response } from "express";
 import { env } from "../config/env.js";
 
 const router = express.Router();
 const JWT_SECRET = env.JWT_SECRET!;
 
 // POST /auth/google
-router.post("/google", async (req, res) => {
+router.post("/google", async (req: Request, res: Response) => {
 	try {
 		const authHeader = req.headers.authorization;
 		if (!authHeader) {
