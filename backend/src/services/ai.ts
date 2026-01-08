@@ -153,9 +153,5 @@ export async function summarizeEmail(
 		choices?: Array<{ message?: { content?: string } }>;
 	};
 
-	console.log(
-		"AI response data:",
-		data.choices?.[0]?.message?.content?.trim() ?? ""
-	);
 	return data.choices?.[0]?.message?.content?.trim() ?? "";
 }
